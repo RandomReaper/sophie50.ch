@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World! Site Title</title>
+  </head>
+  <body>
+<script>
+
+    CountDownTimer('06/22/2023', 'countdown');
+
+    function CountDownTimer(dt, id)
+    {
+        var end = new Date(dt);
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'Joyeux anniversaire';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            document.getElementById(id).innerHTML = days + ' jours ';
+            document.getElementById(id).innerHTML += hours + ' heures ';
+            document.getElementById(id).innerHTML += minutes + ' minutes ';
+            document.getElementById(id).innerHTML += seconds + ' secondes';
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+<div id="countdown"></div>
+  </body>
+</html>
