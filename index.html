@@ -6,46 +6,6 @@
     <title>Les 50 ans de Sophie</title>
   </head>
 <body style="font-family: sans-serif">
-<script>
-
-    CountDownTimer('06/22/2023', 'countdown');
-
-    function CountDownTimer(dt, id)
-    {
-        var end = new Date(dt);
-
-        var _second = 1000;
-        var _minute = _second * 60;
-        var _hour = _minute * 60;
-        var _day = _hour * 24;
-        var timer;
-
-        function showRemaining() {
-            var now = new Date();
-            var distance = end - now;
-            if (distance < 0) {
-
-                clearInterval(timer);
-                document.getElementById(id).innerHTML = 'Joyeux anniversaire';
-
-                return;
-            }
-            var days = Math.floor(distance / _day);
-            var hours = Math.floor((distance % _day) / _hour);
-            var minutes = Math.floor((distance % _hour) / _minute);
-            var seconds = Math.floor((distance % _minute) / _second);
-
-            document.getElementById(id).innerHTML = days + ' jours ';
-            document.getElementById(id).innerHTML += hours + ' heures ';
-            document.getElementById(id).innerHTML += minutes + ' minutes ';
-            document.getElementById(id).innerHTML += seconds + ' secondes';
-        }
-
-        timer = setInterval(showRemaining, 1000);
-    }
-
-</script>
-<h2>Sophie aura 50 ans dans</h2>
-<div id="countdown"></div>
-  </body>
+  <h2>Joyeux anniversaire Sophie</h2>
+</body>
 </html>
